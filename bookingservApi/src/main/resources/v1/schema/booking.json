@@ -1,0 +1,55 @@
+{
+  "title": "Booking resource",
+  "description": "Booking resource object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Booking id",
+      "type": "integer"
+    },
+    "first_name": {
+      "description": "First name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "last_name": {
+      "description": "Last name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "dob":{
+      "description": "date of birth",
+      "type": "string",
+      "pattern": "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$"
+    },
+    "checkin_datetime": {
+      "description": "checkin_datetime",
+      "type": "string",
+      "pattern": "(\\d{4})-(\\d{2})-(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})"
+    },
+    "checkout_datetime": {
+      "description": "checkout_datetime",
+      "type": "string",
+      "pattern": "(\\d{4})-(\\d{2})-(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})"
+    },
+    "totalprice": {
+      "description": "totalprice",
+      "type": "number"
+    },
+    "deposit": {
+      "description": "deposit",
+      "type": "number"
+    },
+    "address": {
+      "$ref":"address.json",
+      "description": "address"
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name",
+    "address"
+  ]
+}
